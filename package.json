@@ -1,0 +1,26 @@
+{
+  "name": "react.redux",
+  "version": "1.0.0",
+  "description": "A practice for React and Redux.",
+  "main": "index.js",
+  "scripts": {
+    "create": "create-react-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiegeSailor/ReactRedux.git"
+  },
+  "keywords": [
+    "React",
+    "Redux"
+  ],
+  "author": "Zhang Jin Yu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiegeSailor/ReactRedux/issues"
+  },
+  "homepage": "https://github.com/SiegeSailor/ReactRedux#readme",
+  "dependencies": {
+    "create-react-app": "^3.2.0"
+  }
+}
