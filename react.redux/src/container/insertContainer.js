@@ -1,22 +1,29 @@
 import { connect } from "react-redux";
-import Counter from '../components/counterPresentational';
-import { add, sub, double } from '../actions/action';
+import Insert from '../components/insertPresentational';
+import {addTodo} from '../actions/action';
 
+let stringFakeState = "";
 // 傳遞 state 至 props 的 function, 通常命名為 mapStateToProps
 const mapStateToProps = (state) => {
+    const handler = (string) => {
+        state.todo.string = string;
+        stringFakeState = string;
+      }
+
     return {
-      value: state.counter.val
+      string: state.todo.string,
       // counter 是 reducer 的名稱，也就是說 reducer 是 state tree 的分支點。
       // key 值的 value，就是接收的 props 的名稱
+      handler: handler
     }
   }
 
   // 與上面一樣，但這是傳遞 dispatch 的版本
 const mapDispatchToProps = (dispatch) => {
     return {
-      addEvent: () => {dispatch(add())},
-      subEvent: () => {dispatch(sub())},
-      doubleEvent: () => {dispatch(double())}
+      addTodoEvent: () => {
+          dispatch(addTodo(stringFakeState))
+        }
       // 同樣的，key 值就是接收的 props 的名稱
     }
   }
@@ -25,4 +32,4 @@ const mapDispatchToProps = (dispatch) => {
   export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(Counter);
+  )(Insert);
